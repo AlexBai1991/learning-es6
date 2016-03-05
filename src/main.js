@@ -13,5 +13,12 @@ console.log(haha);
 // let & const //
 /////////////////
 
-import * as letConst from './pratice/let&const/basic';
+import * as letConst from './practice/let&const/basic';
 console.log(letConst);
+
+///////////////////
+// destructuring //
+///////////////////
+
+import './practice/destructuring/basic';
+

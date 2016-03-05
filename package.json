@@ -1,7 +1,7 @@
 {
   "name": "learning-es6",
   "version": "0.0.0",
-  "description": "learing es6 and recording some useful practice.",
+  "description": "learning es6 and recording some useful practice.",
   "main": "index.js",
   "scripts": {
     "build": "webpack --progress --colors --watch"
@@ -20,6 +20,7 @@
     "webpack": "^1.12.14"
   },
   "devDependencies": {
+    "babel-cli": "^6.6.4",
     "babel-core": "^6.6.4",
     "babel-loader": "^6.2.4",
     "babel-plugin-transform-runtime": "^6.6.0",
