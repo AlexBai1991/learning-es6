@@ -39,7 +39,14 @@ console.log(`x3: ${x3}, y2: ${y3}`);
 let { message: msg = 'this is a message while saying no' } = { message: 'this is a message while saying yes' };
 console.log(`message: ${msg}`);
 
- 
+let { msg: { detail: dt } } = { msg2: { detail: 'hahahah' } };
+console.log(`detail is : ${dt}`);
+
+let obj = {};
+let arr = []; 
+({ a1: obj.prop, a2: arr[0] } = { a1: 'a111', a2: 'a222' });
+console.log(`obj.prop is ${obj}, arr is ${arr}`);
+
 
 // 3. 字符串的解构赋值
 
