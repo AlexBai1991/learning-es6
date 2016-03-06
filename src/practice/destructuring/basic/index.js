@@ -39,23 +39,72 @@ console.log(`x3: ${x3}, y2: ${y3}`);
 let { message: msg = 'this is a message while saying no' } = { message: 'this is a message while saying yes' };
 console.log(`message: ${msg}`);
 
-let { msg: { detail: dt } } = { msg2: { detail: 'hahahah' } };
+let { msg: { detail: dt } } = { msg: { detail: 'hahahah' } };
 console.log(`detail is : ${dt}`);
-
+/*
 let obj = {};
 let arr = []; 
 ({ a1: obj.prop, a2: arr[0] } = { a1: 'a111', a2: 'a222' });
 console.log(`obj.prop is ${obj}, arr is ${arr}`);
+*/
+
+let { max, min, sin } = Math;
 
 
 // 3. 字符串的解构赋值
 
+const [str1, str2, str3, str4, ...strLeft] = 'helloworld'; 
+console.log(`${str1}, ${str2}, ${str3}, ${str4}, ${strLeft}`);
+
+let { length: len , trim: tm, toString: ts } = 'teststring';
+console.log(JSON.stringify(len, null, 2));
+console.log(tm.toString());
+console.log(ts.toString());
+
 
 // 4. 数字和布尔值的解构赋值
 
+let { toString: tsn } = 12;
+tsn == Number.prototype.toString;
+console.log(tsn);
 
 // 5. 函数参数的解构赋值
 
+function add([arg1 = 1, arg2]) {
+  return arg1 + arg2;
+}
+console.log(add([undefined, 2]));
 
-// 6. 圆括号问题
+function minus({ arg1 = 10, arg2 }) { // 参数解构也可以带有默认值
+  return arg1 - arg2;
+}
+console.log(minus({arg2: 7}));
+console.log(minus({arg1: 12, arg2: 2}));
 
+console.log([[1, 2], [3, 4]].map(([item1, item2]) => item1 + item2));
+console.log([[1, 2, 4], [1], [9]].map((item) => Math.max.apply(Math, item)));
+
+console.log([1, undefined, 3].map((itm = 'yes') => itm));
+
+// 6. 具体用途
+
+// 6.1 变换变量的值
+var num1 = 1, num2 = 2;
+[num1, num2] = [num2, num1];
+console.log(`num1 is ${num1}, num2 is ${num2}`);
+
+// 6.2 从函数返回多个值
+function example1([x, y]) {
+  return [x + 1, y + 2];
+}
+let [ex1, ex2] = example1([1, 2]);
+console.log(`ex1 is ${ex1}, ex2 is ${ex2}`);
+
+function example2({ x = 'no x', y }) {
+  return {
+    ex11: x + ' example2',
+    ex22: y + ' example2'
+  };
+}
+let { ex11, ex22 } = example2({ y: 'sss' });
+console.log(`ex11 is ${ex11}, ex22 is ${ex22}`);
