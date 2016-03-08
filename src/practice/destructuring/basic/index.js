@@ -108,3 +108,53 @@ function example2({ x = 'no x', y }) {
 }
 let { ex11, ex22 } = example2({ y: 'sss' });
 console.log(`ex11 is ${ex11}, ex22 is ${ex22}`);
+
+// 6.3 函数参数的定义
+
+function f1([x, y, z]) { // 参数是一组有次序的值
+//... 
+} 
+f1([1, 2, 3])
+
+
+function f2({x, y, z}) { // 参数是一组无次序的值
+// ... 
+}
+f2({z: 3, y: 2, x: 1})
+
+// 6.4 提取json数据
+
+var jsonData = {
+  id: 42,
+  status: 'OK',
+  data: [1, 2]
+};
+let { id, status, data: number } = jsonData;
+
+// 6.5 函数参数的默认值
+
+jQuery.ajax = function (url, {
+  async = true,
+  beforeSend = function () {},
+  cache = true,
+  complete = function () {},
+  crossDomain = false,
+  global = true,
+  // ... more config
+}) {
+  // ... do stuff
+};
+
+// 6.6 编码Map结构
+
+var map = new Map();
+map.set('first', 'hello');
+map.set('second', 'world');
+
+for (let [key, value] of map) {
+  console.log(key + " is " + value);
+}
+
+// 6.7 输入模块的制定方法
+
+const { SourceMapConsumer, SourceNode } = require("source-map");
