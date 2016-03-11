@@ -1,3 +1,26 @@
 'use strict';
 
 // learing...
+
+// 字符串遍历器接口
+let str = 'hello string!';
+for (let codePoint of str) {
+  console.log(`codePoint: ${codePoint}`);
+}
+
+// includes startWith endWith
+let s = 'Hello world!';
+
+s.startsWith('Hello') // true
+s.endsWith('!') // true
+s.includes('o') // true
+
+s.startsWith('world', 6) // true
+s.endsWith('Hello', 5) // true
+s.includes('Hello', 6) // false
+/*endsWith的行为与其他两个方法有所不同。它针对前n个字符，而其他两个方法针对从第n个位置直到字符串结束*/
+
+// repeat(n)
+'x'.repeat(3) // "xxx"
+'hello'.repeat(2) // "hellohello"
+'na'.repeat(0) // ""

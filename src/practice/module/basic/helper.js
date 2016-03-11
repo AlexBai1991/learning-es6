@@ -1,3 +1,4 @@
+'use strict';
 
 const foo = 'alexbai';
 // export bar
