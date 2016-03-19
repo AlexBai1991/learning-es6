@@ -1,7 +1,5 @@
 'use strict';
 
-// learing...
-
 // 字符串遍历器接口
 let str = 'hello string!';
 for (let codePoint of str) {

@@ -19,9 +19,6 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-
-  ],
   babel: {
     presets: ['es2015'],
     plugins: ['transform-runtime']
