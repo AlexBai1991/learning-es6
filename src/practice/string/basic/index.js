@@ -34,3 +34,5 @@ s.includes('Hello', 6) // false
 // 模板字符串
 const whosname = 'Alex Bai <alexbai1991@gmail.com>';
 let modelStr = `hello this is from a guy named ${whosname}`;
+
+console.log(whosname, modelStr);
